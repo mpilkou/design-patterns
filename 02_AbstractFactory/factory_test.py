@@ -39,5 +39,15 @@ class FactoryTest(unittest.TestCase):
         self.assertEqual(factory.createImage().getHtml(),    "<image size = 1 >  </image>")
         self.assertEqual(factory.createText().getHtml(),     "<p size = 1 >  </p>")
 
+    def test_factory_is_singleton_instanse(self):
+        factory = LargeFactory()
+        LargeFactory().createButton()
+        self.assertEqual(factory.instanse, LargeFactory().instanse)
+
+    def test_different_factory_is_singleton_instanse(self):
+        factory = LargeFactory()
+        SmallFactory().createButton()
+        self.assertNotEqual(factory.instanse, SmallFactory().instanse)
+
 if __name__ == '__main__':
     unittest.main()
