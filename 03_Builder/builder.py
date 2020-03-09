@@ -1,6 +1,6 @@
 from abc import abstractmethod
-
 from parts import Vehicle
+
 
 class Builder:
 
@@ -19,6 +19,7 @@ class Builder:
     @abstractmethod
     def BuildDoors(self):
         pass
+
 
 class MotorcycleBuilder(Builder):
 
@@ -41,6 +42,7 @@ class MotorcycleBuilder(Builder):
         self.vehicle.doors = 0
         return self.vehicle.doors
 
+
 class CarBuilder(Builder):
 
     def __init__(self):
@@ -61,7 +63,8 @@ class CarBuilder(Builder):
     def BuildDoors(self):
         self.vehicle.doors = 4
         return self.vehicle.doors
-    
+
+
 class ScooterBuilder(Builder):
     def __init__(self):
         self.vehicle = Vehicle("Scooter")
