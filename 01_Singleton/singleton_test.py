@@ -31,7 +31,7 @@ class SingletonTest(unittest.TestCase):
     def test_is_same_singleton(self):
         singleton_1 = Singleton()
         singleton_2 = Singleton()
-        self.assertEqual(singleton_1.getInstanse() is singleton_2.getInstanse(), True)
+        self.assertEqual(singleton_1.get_instanse() is singleton_2.get_instanse(), True)
 
     def test_thread_save(self):
         try:
@@ -45,12 +45,12 @@ class SingletonTest(unittest.TestCase):
     def test_is_different_singleton_inheritanse(self):
         singleton_1 = Singleton()
         singleton_2 = ChildSingleton()
-        self.assertFalse(singleton_1.getInstanse() is singleton_2.getInstanse())
+        self.assertFalse(singleton_1.get_instanse() is singleton_2.get_instanse())
 
     def test_is_same_singleton_child_inheritanse(self):
         singleton_1 = ChildSingleton()
         singleton_2 = ChildSingleton()
-        self.assertTrue(singleton_1.getInstanse() is singleton_2.getInstanse())
+        self.assertTrue(singleton_1.get_instanse() is singleton_2.get_instanse())
 
     """Serialisation"""
     def test_is_serialize(self):
