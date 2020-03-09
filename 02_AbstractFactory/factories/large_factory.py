@@ -1,10 +1,12 @@
-from factories.factory  import Factory, mySingletonFun
-from elements.button    import LargeButton
-from elements.header    import LargeHeader
-from elements.image     import LargeImage
-from elements.text      import LargeText
+from factories.factory import Factory, mySingletonFun
+from elements.button import LargeButton
+from elements.header import LargeHeader
+from elements.image import LargeImage
+from elements.text import LargeText
+
 
 class LargeFactory(Factory):
+
     instanse = None
 
     @mySingletonFun
@@ -22,4 +24,3 @@ class LargeFactory(Factory):
     @mySingletonFun
     def createText(self):
         return LargeText()
-    

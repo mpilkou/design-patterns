@@ -1,8 +1,9 @@
-from factories.factory  import Factory, mySingletonFun
-from elements.button    import SmallButton
-from elements.header    import SmallHeader
-from elements.image     import SmallImage
-from elements.text      import SmallText
+from factories.factory import Factory, mySingletonFun
+from elements.button import SmallButton
+from elements.header import SmallHeader
+from elements.image import SmallImage
+from elements.text import SmallText
+
 
 class SmallFactory(Factory):
     instanse = None
@@ -22,4 +23,3 @@ class SmallFactory(Factory):
     @mySingletonFun
     def createText(self):
         return SmallText()
-    
