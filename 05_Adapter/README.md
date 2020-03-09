@@ -1,0 +1,1 @@
+![UML](https://www.oodesign.com/images/structural/adapter-pattern.png)
