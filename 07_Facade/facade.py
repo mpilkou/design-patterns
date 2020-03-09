@@ -1,7 +1,9 @@
 from abc import ABC, abstractclassmethod
 
+
 class _Fuel:
-    def __init__(self, liters = 0, limit = 30):
+
+    def __init__(self, liters=0, limit=30):
         self._liters = liters
         self._limit = limit
 
@@ -15,10 +17,11 @@ class _Fuel:
             self._liters += liters
         else:
             self._liters = self._limit
-        
+
 
 class _Engine:
-    def __init__(self, liters_per_С_kilometr = 10 ,fuel = _Fuel()):
+
+    def __init__(self, liters_per_С_kilometr=10, fuel=_Fuel()):
 
         if type(fuel) is _Fuel:
             self._fuel = fuel
@@ -26,12 +29,12 @@ class _Engine:
             self._fuel = _Fuel
 
         self._liters_per_С_kilometr = liters_per_С_kilometr
-        
+
     @property
     def fuel(self):
         return self._fuel
 
-    def start(self, km = 100):
+    def start(self, km=100):
         fuel_needed = ((self._liters_per_С_kilometr * km) / 100)
 
         if fuel_needed > self.fuel.liters:
@@ -39,13 +42,15 @@ class _Engine:
             return None
 
         self.fuel.liters = -fuel_needed
-        
+
         return self.fuel.liters
 
+
 class _Lights:
+
     def __init__(self):
         self._lights = False
-    
+
     def light_status(self):
         return self._lights
 
@@ -59,6 +64,7 @@ class _Lights:
 
 
 class Car:
+
     def __init__(self):
         self._engine = _Engine()
         self._lights = _Lights()
@@ -66,7 +72,7 @@ class Car:
     def move(self, km):
         return self._engine.start(km)
 
-    def lights(self, turn_on = False):
+    def lights(self, turn_on=False):
         if turn_on:
             self._lights.on()
         else:
@@ -76,4 +82,3 @@ class Car:
 
     def add_fuel(self, liters):
         self._engine._fuel.liters = liters
-    

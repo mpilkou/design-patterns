@@ -1,6 +1,7 @@
 import unittest
 import facade
 
+
 # Python 2/3 compatibility
 if not hasattr(unittest.TestCase, 'assertCountEqual'):
     try:
@@ -8,11 +9,13 @@ if not hasattr(unittest.TestCase, 'assertCountEqual'):
     except:
         print("Warning")
 
+
 class FacadeTest(unittest.TestCase):
+
     def test_facade_car_fuel_not_enouth(self):
         car = facade.Car()
         self.assertEqual(car.move(100), None)
-    
+
     def test_facade_car_move(self):
         car = facade.Car()
         car.add_fuel(20)
@@ -22,6 +25,7 @@ class FacadeTest(unittest.TestCase):
         car = facade.Car()
         self.assertFalse(car.lights())
         self.assertTrue(car.lights(True))
+
 
 if __name__ == '__main__':
     unittest.main()

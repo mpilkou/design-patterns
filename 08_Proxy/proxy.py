@@ -1,4 +1,7 @@
+
+
 class File:
+
     def __init__(self, name):
         self._name = name
         self._text = ""
@@ -15,13 +18,13 @@ class File:
             text = my_file.read()
         print(text)
         return 2
-    
+
     def __del__(self):
         import os
         try:
             os.remove(self._name + ".txt")
         except OSError:
-            print ("Error in remove")
+            print("Error in remove")
 
 
 class Proxy:
@@ -29,19 +32,17 @@ class Proxy:
         self._file = file
         self._stage = None
 
+
 class ProxyFileLoader(Proxy):
 
     def file_show(self):
-        if self._stage == None:
+        if self._stage is None:
             try:
                 self._stage = self._file.file_load()
                 self._stage = self._file.file_show()
             except:
-                self._stage == None
+                self._stage is None
         return self._stage
 
     def __del__(self):
         del self._file
-
-
-    
