@@ -1,4 +1,4 @@
-from factories.factory import Factory, mySingletonFun
+from factories.factory import Factory, my_singleton_fun
 from elements.button import LargeButton
 from elements.header import LargeHeader
 from elements.image import LargeImage
@@ -9,18 +9,18 @@ class LargeFactory(Factory):
 
     instanse = None
 
-    @mySingletonFun
-    def createButton(self):
+    @my_singleton_fun
+    def create_button(self):
         return LargeButton()
 
-    @mySingletonFun
-    def createHeader(self):
+    @my_singleton_fun
+    def create_header(self):
         return LargeHeader()
 
-    @mySingletonFun
-    def createImage(self):
+    @my_singleton_fun
+    def create_image(self):
         return LargeImage()
 
-    @mySingletonFun
-    def createText(self):
+    @my_singleton_fun
+    def create_text(self):
         return LargeText()

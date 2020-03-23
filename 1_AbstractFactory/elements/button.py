@@ -9,7 +9,7 @@ class Button():
         self.parameters = parameters
 
     @abstractmethod
-    def getHtml(self):
+    def get_html(self):
         return "<{0}{params}>  </{0}>".format(self.tag, params=self.parameters)
 
 

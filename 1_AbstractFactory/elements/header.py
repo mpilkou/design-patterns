@@ -7,7 +7,7 @@ class Header():
     def __init__(self, parameters=""):
         self.parameters = parameters
 
-    def getHtml(self):
+    def get_html(self):
         return "<{0}{params}>  </{0}>".format(self.tag, params=self.parameters)
 
 

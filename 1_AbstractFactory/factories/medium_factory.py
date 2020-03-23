@@ -1,4 +1,4 @@
-from factories.factory import Factory, mySingletonFun
+from factories.factory import Factory, my_singleton_fun
 from elements.button import MediumButton
 from elements.header import MediumHeader
 from elements.image import MediumImage
@@ -8,18 +8,18 @@ from elements.text import MediumText
 class MediumFactory(Factory):
     instanse = None
 
-    @mySingletonFun
-    def createButton(self):
+    @my_singleton_fun
+    def create_button(self):
         return MediumButton()
 
-    @mySingletonFun
-    def createHeader(self):
+    @my_singleton_fun
+    def create_header(self):
         return MediumHeader()
 
-    @mySingletonFun
-    def createImage(self):
+    @my_singleton_fun
+    def create_image(self):
         return MediumImage()
 
-    @mySingletonFun
-    def createText(self):
+    @my_singleton_fun
+    def create_text(self):
         return MediumText()

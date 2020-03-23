@@ -2,7 +2,7 @@ from abc import abstractmethod
 from threading import Lock
 
 
-def mySingletonFun(function_to_do):
+def my_singleton_fun(function_to_do):
 
     lock = Lock()
 
@@ -20,17 +20,17 @@ def mySingletonFun(function_to_do):
 class Factory:
 
     @abstractmethod
-    def createButton(self):
+    def create_button(self):
         pass
 
     @abstractmethod
-    def createHeader(self):
+    def create_header(self):
         pass
 
     @abstractmethod
-    def createImage(self):
+    def create_image(self):
         pass
 
     @abstractmethod
-    def createText(self):
+    def create_text(self):
         pass
