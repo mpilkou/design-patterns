@@ -5,7 +5,7 @@ class Button():
 
     tag = "button"
 
-    def __init__(self, parameters=""):
+    def __init__(self, parameters: str = ""):
         self.parameters = parameters
 
     @abstractmethod
@@ -14,8 +14,6 @@ class Button():
 
 
 class LargeButton(Button):
-    # def RedButton(self):
-    #     self.tag = "button"
     def __init__(self):
         Button.__init__(self, " size = 5 ")
 

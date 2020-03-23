@@ -1,12 +1,11 @@
 from parts import Vehicle
 from builder import Builder
-import typing
 
 
 class Director:
     _builder = None
 
-    def __init__(self, builder: typing.TypeVar('Builder')):
+    def __init__(self, builder: type(Builder)):
         self._builder = builder
 
     def build(self):

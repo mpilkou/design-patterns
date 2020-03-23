@@ -4,7 +4,7 @@ class Header():
 
     tag = "h"
 
-    def __init__(self, parameters=""):
+    def __init__(self, parameters: str = ""):
         self.parameters = parameters
 
     def get_html(self):

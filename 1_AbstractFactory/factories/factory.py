@@ -8,7 +8,6 @@ def my_singleton_fun(function_to_do):
 
     def executer_function(self, *args, **kwargs):
         with lock:
-            print("with lock")
             if(self.__class__.instanse is None):
                 self.__class__.instanse = self
 

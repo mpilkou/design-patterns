@@ -1,19 +1,7 @@
 import unittest
-import pickle as pic
-import warnings
-
-from multiprocessing.pool import ThreadPool as Pool
 
 from director import Director
 from builder import CarBuilder, MotorcycleBuilder, ScooterBuilder
-from parts import Vehicle
-
-# Python 2/3 compatibility
-if not hasattr(unittest.TestCase, 'assertCountEqual'):
-    try:
-        unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
-    except:
-        print('in python version error')
 
 
 class BuilderTest(unittest.TestCase):
