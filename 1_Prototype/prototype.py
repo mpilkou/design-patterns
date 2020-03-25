@@ -29,7 +29,7 @@ class Prototype(ABC):
         return copy.copy(self)
 
 
-class Type_1_Prototype(Prototype):
+class TypeAPrototype(Prototype):
 
     def __init__(self, value):
         self.name = "Type_1"
@@ -42,7 +42,7 @@ class Type_1_Prototype(Prototype):
         return super().clone()
 
 
-class Type_2_Prototype(Prototype):
+class TypeBPrototype(Prototype):
 
     def __init__(self, value):
         self.name = "Type_2"
@@ -55,7 +55,7 @@ class Type_2_Prototype(Prototype):
         return super().clone()
 
 
-class Type_2_1_Prototype(Type_2_Prototype):
+class TypeBAPrototype(TypeBPrototype):
 
     def __init__(self, value):
         self.name = "Type_2_1"
@@ -68,7 +68,7 @@ class Type_2_1_Prototype(Type_2_Prototype):
         return super().clone()
 
 
-class Type_2_2_Prototype(Type_2_Prototype):
+class TypeBBPrototype(TypeBPrototype):
 
     def __init__(self, value):
         self.name = "Type_2_2"
