@@ -1,16 +1,16 @@
 
 
-class System_Int():
+class SystemInt():
     def request_add_int(self, number_1):
         return number_1 + 1
 
 
-class System_String():
+class SystemString():
     def request_add_string(self, string_1):
         return string_1 + '1'
 
 
-class Adapter(System_Int, System_String):
+class Adapter(SystemInt, SystemString):
 
     def request_add_int(self, number_1):
         return int(

@@ -37,11 +37,9 @@ class ProxyFileLoader(Proxy):
 
     def file_show(self):
         if self._stage is None:
-            try:
-                self._stage = self._file.file_load()
-                self._stage = self._file.file_show()
-            except:
-                self._stage is None
+            self._stage = self._file.file_load()
+            self._stage = self._file.file_show()
+            self._stage is None
         return self._stage
 
     def __del__(self):

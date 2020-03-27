@@ -1,4 +1,3 @@
-from abc import ABC, abstractclassmethod
 
 
 class _Fuel:
@@ -21,21 +20,21 @@ class _Fuel:
 
 class _Engine:
 
-    def __init__(self, liters_per_С_kilometr=10, fuel=_Fuel()):
+    def __init__(self, liters_per_c_kilometr=10, fuel=_Fuel()):
 
         if type(fuel) is _Fuel:
             self._fuel = fuel
         else:
             self._fuel = _Fuel
 
-        self._liters_per_С_kilometr = liters_per_С_kilometr
+        self._liters_per_c_kilometr = liters_per_c_kilometr
 
     @property
     def fuel(self):
         return self._fuel
 
     def start(self, km=100):
-        fuel_needed = ((self._liters_per_С_kilometr * km) / 100)
+        fuel_needed = ((self._liters_per_c_kilometr * km) / 100)
 
         if fuel_needed > self.fuel.liters:
             print("Not enouth fuel")

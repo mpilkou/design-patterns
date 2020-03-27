@@ -2,29 +2,21 @@ import unittest
 import decorator
 
 
-# Python 2/3 compatibility
-if not hasattr(unittest.TestCase, 'assertCountEqual'):
-    try:
-        unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
-    except:
-        print("Warning")
-
-
 class DecoratorTest(unittest.TestCase):
 
     def test_decorator_fun1(self):
-        coffe = decorator.Coffe_component()
+        coffe = decorator.CoffeComponent()
         coffee_milk = decorator.Whiped_Milk(coffe)
         coffee_milk_vanilla = decorator.Vanilla(coffee_milk)
-        self.assertEqual(coffee_milk_vanilla.action_getCost(), 6)
+        self.assertEqual(coffee_milk_vanilla.action_get_cost(), 6)
 
     def test_decorator_fun2(self):
-        coffe = decorator.Coffe_component()
+        coffe = decorator.CoffeComponent()
         coffee_milk = decorator.Whiped_Milk(coffe)
         coffee_milk_vanilla = decorator.Vanilla(coffee_milk)
 
         self.assertEqual(
-            coffee_milk_vanilla.action_getIngridients(),
+            coffee_milk_vanilla.action_get_ingridients(),
             ' espresso , whiped milk , vanilla ')
 
 

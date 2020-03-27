@@ -1,19 +1,7 @@
 import unittest
-import pickle as pic
-import warnings
-
-from multiprocessing.pool import ThreadPool as Pool
 
 import adapter_object
 import adapter_two_way
-
-
-# Python 2/3 compatibility
-if not hasattr(unittest.TestCase, 'assertCountEqual'):
-    try:
-        unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
-    except:
-        print("Warning")
 
 
 class AdapterTest(unittest.TestCase):
@@ -22,7 +10,7 @@ class AdapterTest(unittest.TestCase):
     def test_object_adaptee(self):
         adaptee = adapter_object.Adaptee()
         self.assertEqual(
-            adaptee.specificRequest_round(0.751683836273856564387, 2), 0.75)
+            adaptee.specific_request_round(0.751683836273856564387, 2), 0.75)
 
     def test_object_target(self):
         target = adapter_object.Target()

@@ -6,7 +6,7 @@ class Target():
 
 
 class Adaptee():
-    def specificRequest_round(self, number_1, number_2):
+    def specific_request_round(self, number_1, number_2):
         return round(number_1, number_2)
 
 
@@ -17,5 +17,5 @@ class Adapter(Target):
         self._adaptee = adaptee
 
     def request__devide(self, number_1, number_2):
-        return self._adaptee.specificRequest_round(
+        return self._adaptee.specific_request_round(
             super().request__devide(number_1, number_2), 2)

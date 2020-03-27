@@ -2,14 +2,6 @@ import unittest
 import proxy
 
 
-# Python 2/3 compatibility
-if not hasattr(unittest.TestCase, 'assertCountEqual'):
-    try:
-        unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
-    except:
-        print("Warning")
-
-
 class ProxyTest(unittest.TestCase):
 
     def test_proxy(self):

@@ -2,14 +2,6 @@ import unittest
 import facade
 
 
-# Python 2/3 compatibility
-if not hasattr(unittest.TestCase, 'assertCountEqual'):
-    try:
-        unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
-    except:
-        print("Warning")
-
-
 class FacadeTest(unittest.TestCase):
 
     def test_facade_car_fuel_not_enouth(self):
