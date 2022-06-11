@@ -1,15 +1,11 @@
-# from abc import abstractmethod
+from elements.base_element import HTMLElement
 
-
-class Image():
+class Image(HTMLElement):
 
     tag = "image"
 
     def __init__(self, parameters: str = ""):
-        self.parameters = parameters
-
-    def get_html(self):
-        return "<{0}{params}>  </{0}>".format(self.tag, params=self.parameters)
+        super().__init__(parameters)
 
 
 class LargeImage(Image):
