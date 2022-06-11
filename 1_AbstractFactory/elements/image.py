@@ -1,4 +1,4 @@
-from elements.base_element import HTMLElement
+from elements.abstract_element import HTMLElement
 
 class Image(HTMLElement):
 

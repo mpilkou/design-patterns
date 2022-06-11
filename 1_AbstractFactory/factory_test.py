@@ -52,16 +52,6 @@ class FactoryTest(unittest.TestCase):
             str(small_factory.create_text()),
             "<p size = 1 >  </p>")
 
-    def test_factory_is_singleton_instanse(self):
-        large_factory = LargeFactory()
-        LargeFactory().create_button()
-        self.assertEqual(large_factory.instanse, LargeFactory().instanse)
-
-    def test_different_factory_is_singleton_instanse(self):
-        large_factory = LargeFactory()
-        SmallFactory().create_button()
-        self.assertNotEqual(large_factory.instanse, SmallFactory().instanse)
-
 
 if __name__ == '__main__':
     unittest.main()
