@@ -3,13 +3,16 @@ import pickle as pic
 import os
 
 from multiprocessing.pool import ThreadPool as Pool
-from singleton import Singleton, ChildSingleton
+from singleton import Singleton, ChildSingleton, SingletonClass
 
 
 def help_threat_get_singleton():
     """Help fun"""
     return Singleton()
 
+def help_threat_get_singletonclass():
+    """Help fun"""
+    return SingletonClass()
 
 def help_threat_read_singleton():
     with open("singleton", "rb") as f:
@@ -28,6 +31,12 @@ class SingletonTest(unittest.TestCase):
         singleton_2 = Singleton()
         self.assertEqual(
             singleton_1.get_instanse() is singleton_2.get_instanse(), True)
+    
+    def test_is_same_singletonclass(self):
+        singleton_1 = SingletonClass()
+        singleton_2 = SingletonClass()
+        self.assertEqual(
+            singleton_1.instance is singleton_2.instance, True)
 
     def test_thread_save(self):
         pool1 = Pool(processes=1)
@@ -35,6 +44,17 @@ class SingletonTest(unittest.TestCase):
         self.assertEqual(
             pool1.apply_async(help_threat_get_singleton).get().get_instanse(),
             pool2.apply_async(help_threat_get_singleton).get().get_instanse())
+        pool1.close()
+        pool2.close()
+    
+    def test_thread_save_singletonclass(self):
+        pool1 = Pool(processes=1)
+        pool2 = Pool(processes=1)
+        self.assertEqual(
+            pool1.apply_async(help_threat_get_singletonclass).get(),
+            pool2.apply_async(help_threat_get_singletonclass).get())
+        pool1.close()
+        pool2.close()
 
     """Inheritanse"""
     def test_is_different_singleton_inheritanse(self):
@@ -60,6 +80,9 @@ class SingletonTest(unittest.TestCase):
         self.assertEqual(
             pool1.apply_async(help_threat_read_singleton).get().get_instanse(),
             pool2.apply_async(help_threat_read_singleton).get().get_instanse())
+        
+        pool1.close()
+        pool2.close()
 
         try:
             os.remove("singleton")
