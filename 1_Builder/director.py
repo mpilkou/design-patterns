@@ -1,19 +1,16 @@
-from parts import Vehicle
 from builder import Builder
 
 
 class Director:
     _builder = None
 
-    def __init__(self, builder: type(Builder)):
+    def __init__(self, builder: Builder):
         self._builder = builder
 
-    def build(self):
-        vehicle = Vehicle(self._builder.vehicle)
+    def construct(self):
+        self._builder.build_engine()
+        self._builder.build_frame()
+        self._builder.build_wheels()
+        self._builder.build_doors()
 
-        vehicle.engine = self._builder.BuildEngine()
-        vehicle.frame = self._builder.BuildFrame()
-        vehicle.wheels = self._builder.BuildWheels()
-        vehicle.doors = self._builder.BuildDoors()
-
-        return vehicle
+        return self._builder.get_result()
