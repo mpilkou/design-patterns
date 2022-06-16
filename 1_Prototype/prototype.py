@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 import copy
 
 
@@ -23,8 +23,7 @@ class Prototype(ABC):
     @value.setter
     def value(self, value):
         self.__value = value
-
-    @abstractmethod
+    
     def clone(self):
         return copy.copy(self)
 
@@ -46,32 +45,6 @@ class TypeBPrototype(Prototype):
 
     def __init__(self, value):
         self.name = "Type_2"
-        self.value = value
-
-    def __call__(self):
-        return self.clone()
-
-    def clone(self):
-        return super().clone()
-
-
-class TypeBAPrototype(TypeBPrototype):
-
-    def __init__(self, value):
-        self.name = "Type_2_1"
-        self.value = value
-
-    def __call__(self):
-        return self.clone()
-
-    def clone(self):
-        return super().clone()
-
-
-class TypeBBPrototype(TypeBPrototype):
-
-    def __init__(self, value):
-        self.name = "Type_2_2"
         self.value = value
 
     def __call__(self):
