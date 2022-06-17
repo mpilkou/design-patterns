@@ -1,5 +1,5 @@
-# DesignPatterns
-Created code to learn Design Patterns
+# Design Patterns
+Repository with learned Design Patterns.
 
 1_.. - Creational Design Patterns
 
