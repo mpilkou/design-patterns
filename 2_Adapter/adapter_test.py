@@ -7,19 +7,13 @@ import adapter_two_way
 class AdapterTest(unittest.TestCase):
 
     """Object Adapter"""
-    def test_object_adaptee(self):
+    def test_object_adapler(self):
         adaptee = adapter_object.Adaptee()
+
         self.assertEqual(
-            adaptee.specific_request_round(0.751683836273856564387, 2), 0.75)
+            adapter_object.Adapter(adaptee).request(0.751683836273856564387, 2), 
+            round(0.751683836273856564387, 2))
 
-    def test_object_target(self):
-        target = adapter_object.Target()
-        self.assertNotEqual(target.request__devide(3, 11), 0.27)
-
-    def test_object_adapter(self):
-        adaptee = adapter_object.Adaptee()
-        adapter = adapter_object.Adapter(adaptee)
-        self.assertEqual(adapter.request__devide(3, 11), 0.27)
 
     """Two-Way Adapter"""
     """string based adding"""
