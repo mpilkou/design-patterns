@@ -2,7 +2,7 @@ import unittest
 from bridge import PC, Laptop, Windows, Linux
 
 
-class DecoratorTest(unittest.TestCase):
+class BridgeTest(unittest.TestCase):
 
     def test_bridge(self):
         computer1 = PC(Windows())
@@ -44,16 +44,6 @@ class DecoratorTest(unittest.TestCase):
         computer1 = PC(Linux())
         computer2 = Laptop(Windows())
         self.assertNotEqual(computer1.show_default_folder(), computer2.show_default_folder())
-
-    # def test_bridge_fun2(self):
-    #     computer1 = Computer(Linux())
-    #     computer2 = Computer(Linux())
-    #     self.assertEqual(computer1.show_default_folder(), computer2.show_default_folder())
-
-    # def test_bridge_fun3(self):
-    #     computer1 = Computer(Windows())
-    #     computer2 = Computer(Windows())
-    #     self.assertEqual(computer1.show_default_folder(), computer2.show_default_folder())
 
 if __name__ == '__main__':
     unittest.main()
